@@ -140,6 +140,9 @@ public class TimelineActivity extends AppCompatActivity {
             case R.id.outta_here:
               backToLoginPage();
                 return true;
+            case R.id.refresh:
+                fetchTimelineAsync(0);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -188,9 +191,12 @@ public class TimelineActivity extends AppCompatActivity {
         // `client` here is an instance of Android Async HTTP
         // getHomeTimeline is an example endpoint.
         client.getHomeTimeline(new JsonHttpResponseHandler() {
-            public void onSuccess(JSONArray json) {
+            public void onSuccess(int statusCode, Header[] Headers, JSONArray response) {
+                tweetAdapter.clear();
                 // Remember to CLEAR OUT old items before appending in the new ones
                 tweetAdapter.clear();
+
+                populateTimeline();
                 // ...the data has come back, add new items to your adapter...
                 tweetAdapter.addAll(tweets);
                 // Now we call setRefreshing(false) to signal refresh has finished
