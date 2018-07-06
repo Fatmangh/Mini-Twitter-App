@@ -148,6 +148,13 @@ public class TimelineActivity extends AppCompatActivity {
         }
     }
 
+    private void goToDetailsPage() {
+        Intent i = new Intent(TimelineActivity.this, DetailsActivity.class);
+
+      //  i.putExtra("tweet", Parcels.wrap( ));
+        startActivityForResult(i, REQUEST_CODE);
+    }
+
     private void backToLoginPage() {
         Intent homeIntent = new Intent(Intent.ACTION_MAIN);
         homeIntent.addCategory( Intent.CATEGORY_HOME );
@@ -160,8 +167,7 @@ public class TimelineActivity extends AppCompatActivity {
         startActivityForResult(i, REQUEST_CODE);
     }
 
-    private void showProfileView() {
-    }
+
 
     private void composeMessage() {
         Intent i = new Intent(TimelineActivity.this, ComposeActivity.class);
