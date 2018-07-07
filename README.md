@@ -26,7 +26,7 @@ The following **optional** features are implemented:
 * [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
 * [ ] User can **select "reply" from detail view to respond to a tweet**
   * [ ] User that wrote the original tweet is **automatically "@" replied in compose**
-* [ ] User can tap a tweet to **open a detailed tweet view**
+* [x] User can tap a tweet to **open a detailed tweet view**
   * [ ] User can **take favorite (and unfavorite) or reweet** actions on a tweet
 * [ ] User can **see embedded image media within a tweet** on list or detail view.
 
