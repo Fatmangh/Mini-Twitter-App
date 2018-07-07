@@ -21,13 +21,14 @@ public class profileActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         context = this;
 
+
         ivProfileImage = (ImageView) findViewById(R.id.tvProfilePic);
         userName = (TextView) findViewById(R.id.tvName);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ivProfileImage.setClipToOutline(true);
         }
-
+        userName.setText("USERNAME NOT CONFIGURED YET");
         User.getCurrentUser(context, new User.UserCallbackInterface() {
             @Override
 
